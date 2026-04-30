@@ -1,5 +1,6 @@
 export const profile = {
   platformUrl: "https://varta.astrosage.com/astrologer/anchaltraot3353?lang=en",
+  image: "/profile.jpg",
   expertise: {
     en: "Tarot Reading",
     hi: "टैरो रीडिंग"

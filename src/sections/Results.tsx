@@ -30,7 +30,7 @@ const Results = forwardRef<HTMLElement, Props>(function Results(
     <section
       id="results"
       ref={ref}
-      className="scroll-mt-24 py-16 sm:py-24"
+      className="scroll-mt-24 py-8 sm:py-12"
     >
       <Container>
         <SectionHeading

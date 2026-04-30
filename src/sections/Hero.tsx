@@ -74,7 +74,7 @@ export default function Hero({ onStart }: { onStart: () => void }) {
           </div>
         </div>
 
-        <div className="mt-14 grid place-items-center">
+        {/* <div className="mt-14 grid place-items-center">
           <div className="relative h-[310px] w-[240px] sm:h-[380px] sm:w-[290px]">
             <motion.div
               aria-hidden
@@ -110,7 +110,7 @@ export default function Hero({ onStart }: { onStart: () => void }) {
           <p className="mt-5 text-xs uppercase tracking-[0.30em] text-zinc-600 dark:text-white/50">
             {t("heroTapFlip")}
           </p>
-        </div>
+        </div> */}
       </Container>
     </section>
   );
