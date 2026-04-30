@@ -22,8 +22,8 @@ export const profile = {
   followers: 2512,
   startingAtInrPerMin: 24,
   contact: {
-    whatsapp: "https://wa.me/919999999999?text=Hi%20Tarot%20Anchal%20P%2C%20I%20want%20a%20tarot%20reading.",
-    instagram: "https://instagram.com/anchal.tarot",
+    whatsapp: "https://wa.me/6398849399?text=Hi%20Tarot%20Anchal%20P%2C%20I%20want%20a%20tarot%20reading.",
+    instagram: "https://www.instagram.com/tarot_anchal_p?igsh=b2lwNzJpc2Mxd3V4",
     facebook: "https://facebook.com/anchal.tarot"
   }
 } as const;
