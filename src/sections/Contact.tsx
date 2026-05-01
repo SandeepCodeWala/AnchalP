@@ -67,7 +67,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-12">
       <Container>
-        <SectionHeading title={t("contactTitle")} subtitle={t("contactSubtitle")} align="center" />
+        <SectionHeading kicker={t("contactKicker")} title={t("contactTitle")} subtitle={t("contactSubtitle")} align="center" />
         <div className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-1 md:grid-cols-3">
           {links.map((link) => (
             <LinkCard key={link.title} {...link} />
