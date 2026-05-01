@@ -5,6 +5,7 @@ import GlowButton from "@/components/GlowButton";
 import SectionHeading from "@/components/SectionHeading";
 import TarotCard from "@/components/TarotCard";
 import type { DrawnCard, ReadingStage, ReadingType } from "@/data/tarot";
+import { profile } from "@/data/profile";
 import { useI18n } from "@/i18n/i18n";
 
 type Props = {
@@ -30,14 +31,14 @@ const Results = forwardRef<HTMLElement, Props>(function Results(
     <section
       id="results"
       ref={ref}
-      className="scroll-mt-24 py-8 sm:py-12"
+      className="scroll-mt-20 py-6 sm:py-8"
     >
       <Container>
         <SectionHeading
           kicker={t("resultsKicker")}
           title={t("resultsTitle")}
-          subtitle={t("resultsSubtitle")}
           align="center"
+          className="mb-5"
         />
 
         <AnimatePresence mode="wait">
@@ -167,7 +168,25 @@ const Results = forwardRef<HTMLElement, Props>(function Results(
                 ))}
               </div>
 
-              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <div className="mt-8 rounded-3xl border border-gold/20 bg-gradient-to-br from-gold/8 via-accent/5 to-transparent p-6 text-center dark:from-gold/12">
+                <div className="text-xs uppercase tracking-[0.22em] text-zinc-500 dark:text-white/40 mb-2">
+                  {t("bookSessionSub")}
+                </div>
+                <div className="font-display text-xl text-zinc-950 dark:text-white mb-4">
+                  {t("bookSession")}
+                </div>
+                <a
+                  href={profile.contact.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent via-violet-600 to-gold/80 px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:shadow-lg"
+                >
+                  <span>💬</span>
+                  {t("bookSession")}
+                </a>
+              </div>
+
+              <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <GlowButton onClick={onRestart}>{t("startAnother")}</GlowButton>
                 <GlowButton
                   variant="ghost"

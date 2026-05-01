@@ -64,9 +64,6 @@ export default function CTA({ onStart }: { onStart: () => void }) {
                 </GlowButton>
               </div>
 
-              <div className="mt-4 text-xs text-zinc-600 dark:text-white/50">
-                {t("ctaReplaceNote")}
-              </div>
             </div>
 
             <div className="relative">

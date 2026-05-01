@@ -8,7 +8,7 @@ type ThemeContextValue = {
   toggleTheme: () => void;
 };
 
-const THEME_STORAGE_KEY = "tarot-anchal-theme";
+const THEME_STORAGE_KEY = "light";
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
@@ -28,7 +28,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     window.localStorage.setItem(THEME_STORAGE_KEY, theme);
     const root = document.documentElement;
     root.dataset.theme = theme;
-    root.classList.toggle("dark", theme === "dark");
+    root.classList.toggle("dark", theme === "light");
   }, [theme]);
 
   const value = useMemo<ThemeContextValue>(() => {

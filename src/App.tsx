@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import About from "@/sections/About";
 import ChooseReading from "@/sections/ChooseReading";
-import CTA from "@/sections/CTA";
 import Contact from "@/sections/Contact";
 import Experience from "@/sections/Experience";
 import Hero from "@/sections/Hero";
@@ -60,6 +59,7 @@ export default function App() {
 
   const [readingType, setReadingType] = useState<ReadingTypeId>("love");
   const [stage, setStage] = useState<ReadingStage>("idle");
+  const [question, setQuestion] = useState("");
 
   const [deckIds, setDeckIds] = useState<TarotCardId[]>(() =>
     shuffle(createDeckIds())
@@ -92,6 +92,7 @@ export default function App() {
     setStage("idle");
     setDrawnIds([]);
     setDeckIds(shuffle(createDeckIds()));
+    setQuestion("");
   };
 
   const selectReading = (id: ReadingTypeId) => {
@@ -183,6 +184,8 @@ export default function App() {
             stage={stage}
             deck={deck}
             drawn={drawn}
+            question={question}
+            onQuestionChange={setQuestion}
             onShuffle={doShuffle}
             onDraw={drawCard}
             onReveal={reveal}
@@ -201,7 +204,6 @@ export default function App() {
               scrollTo(experienceRef);
             }}
           />
-          <CTA onStart={() => scrollTo(readingsRef)} />
           <Contact />
         </motion.main>
       </AnimatePresence>

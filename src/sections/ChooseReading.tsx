@@ -23,14 +23,14 @@ const ChooseReading = forwardRef<HTMLElement, Props>(function ChooseReading(
     <section
       id="readings"
       ref={ref}
-      className="scroll-mt-24 py-8 sm:py-12"
+      className="scroll-mt-20 py-6 sm:py-8"
     >
       <Container>
         <SectionHeading
           kicker={t("chooseKicker")}
           title={t("chooseTitle")}
-          subtitle={t("chooseSubtitle")}
           align="center"
+          className="mb-5"
         />
 
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

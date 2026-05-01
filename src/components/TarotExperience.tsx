@@ -48,6 +48,8 @@ export default function TarotExperience({
   stage,
   deck,
   drawn,
+  question,
+  onQuestionChange,
   onShuffle,
   onDraw,
   onReveal,
@@ -57,6 +59,8 @@ export default function TarotExperience({
   stage: ReadingStage;
   deck: TarotCardData[];
   drawn: DrawnCard[];
+  question: string;
+  onQuestionChange: (q: string) => void;
   onShuffle: () => void;
   onDraw: () => void;
   onReveal: () => void;
@@ -74,6 +78,8 @@ export default function TarotExperience({
     ready: t("helperReady"),
     revealed: t("helperRevealed")
   };
+
+  const positions = [t("positionPast"), t("positionPresent"), t("positionFuture")];
 
   return (
     <LayoutGroup>
@@ -95,6 +101,27 @@ export default function TarotExperience({
             <p className="mt-4 text-sm leading-relaxed text-zinc-700 dark:text-white/70">
               {helper[stage]}
             </p>
+
+            {stage === "idle" ? (
+              <div className="mt-5">
+                <label className="block text-xs font-semibold uppercase tracking-[0.18em] text-zinc-600 dark:text-white/55 mb-2">
+                  {t("questionLabel")}
+                </label>
+                <textarea
+                  value={question}
+                  onChange={(e) => onQuestionChange(e.target.value)}
+                  placeholder={t("questionPlaceholder")}
+                  rows={2}
+                  className="w-full resize-none rounded-2xl border border-black/10 bg-black/[0.02] px-4 py-3 text-sm leading-relaxed text-zinc-900 placeholder:text-zinc-400 focus:border-accent/40 focus:outline-none focus:ring-2 focus:ring-accent/20 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:placeholder:text-white/30"
+                />
+                <p className="mt-1.5 text-[11px] text-zinc-500 dark:text-white/35">{t("questionHint")}</p>
+              </div>
+            ) : question ? (
+              <div className="mt-5 rounded-2xl border border-gold/20 bg-gold/5 px-4 py-3 dark:bg-gold/10">
+                <div className="text-[10px] font-bold uppercase tracking-[0.18em] text-gold/70 mb-1">{t("questionLabel")}</div>
+                <p className="text-sm italic text-zinc-700 dark:text-white/70 line-clamp-2">{question}</p>
+              </div>
+            ) : null}
 
             <div className="mt-7 flex items-center gap-3">
               <div className="text-xs text-zinc-600 dark:text-white/50">
@@ -209,24 +236,35 @@ export default function TarotExperience({
               <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:gap-5 sm:overflow-visible sm:pb-0">
                 {Array.from({ length: 3 }).map((_, i) => {
                   const slot = drawn[i];
-                  if (!slot) return <PlaceholderCard key={i} label={t("cardLabel", { n: i + 1 })} />;
+                  if (!slot) return (
+                    <div key={i} className="flex flex-col items-center gap-2 shrink-0 snap-center">
+                      <PlaceholderCard label={positions[i]} />
+                      <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-zinc-400 dark:text-white/25">
+                        {positions[i]}
+                      </span>
+                    </div>
+                  );
 
                   return (
-                    <motion.div
-                      key={slot.card.id}
-                      initial={{ opacity: 0, y: reduceMotion ? 0 : 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: reduceMotion ? 0 : 0.35 }}
-                      className="h-[208px] w-[144px] shrink-0 snap-center sm:shrink sm:justify-self-center"
-                    >
-                      <TarotCard
-                        card={slot.card}
-                        flipped={stage === "revealed"}
-                        interactive={stage === "revealed"}
-                        className="h-full w-full"
-                        layoutId={`deck-${slot.card.id}`}
-                      />
-                    </motion.div>
+                    <div key={slot.card.id} className="flex flex-col items-center gap-2 shrink-0 snap-center sm:shrink sm:justify-self-center">
+                      <motion.div
+                        initial={{ opacity: 0, y: reduceMotion ? 0 : 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: reduceMotion ? 0 : 0.35 }}
+                        className="h-[208px] w-[144px]"
+                      >
+                        <TarotCard
+                          card={slot.card}
+                          flipped={stage === "revealed"}
+                          interactive={stage === "revealed"}
+                          className="h-full w-full"
+                          layoutId={`deck-${slot.card.id}`}
+                        />
+                      </motion.div>
+                      <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-zinc-500 dark:text-white/40">
+                        {positions[i]}
+                      </span>
+                    </div>
                   );
                 })}
               </div>

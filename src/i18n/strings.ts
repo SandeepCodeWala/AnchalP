@@ -131,6 +131,31 @@ export const strings = {
     ritualBody:
       "If the message feels intense, pause. A reveal is an invitation — not a command.",
 
+    howKicker: "Your Journey",
+    howTitle: "Three steps to clarity",
+    howStep1Title: "Choose your focus",
+    howStep1Desc: "Pick a reading type — love, career, clarity, or shadow work. Your intention shapes the entire message.",
+    howStep2Title: "Shuffle & draw",
+    howStep2Desc: "Clear your mind, shuffle the deck, and draw 3 cards. Trust your first impulse — it knows.",
+    howStep3Title: "Receive your reading",
+    howStep3Desc: "Reveal your cards. Each one holds a message that speaks directly to your question.",
+
+    progressStep1: "Intention",
+    progressStep2: "Shuffle",
+    progressStep3: "Draw",
+    progressStep4: "Reveal",
+
+    questionLabel: "What question is on your heart today?",
+    questionPlaceholder: "Write your question here — or hold it silently in your mind...",
+    questionHint: "Optional. A clear intention deepens your reading.",
+
+    positionPast: "Past",
+    positionPresent: "Present",
+    positionFuture: "Future",
+
+    bookSession: "Book a Personal Session",
+    bookSessionSub: "Go deeper with Anchal — on WhatsApp",
+
     footerBody:
       "A premium Tarot Reader experience — immersive motion, touch-friendly interactions, and storytelling-first design.",
     crafted: "Crafted with intention.",
@@ -274,6 +299,31 @@ export const strings = {
     ritualNote: "रिचुअल नोट",
     ritualBody:
       "अगर संदेश भारी लगे, ठहर जाएं। रिवील एक आमंत्रण है — आदेश नहीं।",
+
+    howKicker: "आपकी यात्रा",
+    howTitle: "तीन कदम — स्पष्टता की ओर",
+    howStep1Title: "अपना विषय चुनें",
+    howStep1Desc: "एक रीडिंग चुनें — प्रेम, करियर, स्पष्टता, या छाया-कार्य। आपकी नियत सब कुछ आकार देती है।",
+    howStep2Title: "शफल करें और ड्रॉ करें",
+    howStep2Desc: "मन शांत करें, डेक शफल करें, और 3 कार्ड ड्रॉ करें। अपनी पहली भावना पर भरोसा करें।",
+    howStep3Title: "अपनी रीडिंग पाएं",
+    howStep3Desc: "कार्ड रिवील करें। हर कार्ड में एक संदेश है जो सीधे आपके प्रश्न से जुड़ता है।",
+
+    progressStep1: "नियत",
+    progressStep2: "शफल",
+    progressStep3: "ड्रॉ",
+    progressStep4: "रिवील",
+
+    questionLabel: "आज आपके मन में कौन सा प्रश्न है?",
+    questionPlaceholder: "यहां अपना प्रश्न लिखें — या इसे मन में ही रखें...",
+    questionHint: "वैकल्पिक। स्पष्ट नियत रखने से रीडिंग गहरी होती है।",
+
+    positionPast: "अतीत",
+    positionPresent: "वर्तमान",
+    positionFuture: "भविष्य",
+
+    bookSession: "व्यक्तिगत सत्र बुक करें",
+    bookSessionSub: "Anchal के साथ गहराई में — WhatsApp पर",
 
     footerBody:
       "प्रीमियम टैरो रीडर अनुभव — इमर्सिव मोशन, टच‑फ्रेंडली इंटरैक्शन, और storytelling‑first डिजाइन।",

@@ -27,7 +27,7 @@ export default function Hero({ onStart }: { onStart: () => void }) {
         <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/30 to-white dark:from-midnight/10 dark:via-midnight/35 dark:to-midnight" />
       </div>
 
-      <Container className="pb-14 pt-16 sm:pb-24 sm:pt-24">
+      <Container className="pb-10 pt-10 sm:pb-14 sm:pt-14">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-xs uppercase tracking-[0.30em] text-zinc-600 dark:text-white/60">
             {t("heroKicker")}
