@@ -59,7 +59,7 @@ export default function Header({
       { label: t("navAbout"), href: "#about" },
       { label: t("navVoices"), href: "#testimonials" },
       { label: t("navReadings"), href: "#readings" },
-      { label: t("navShuffle"), href: "#experience" },
+      // { label: t("navShuffle"), href: "#experience" },
       { label: t("navContact"), href: "#contact" }
     ],
     [t]

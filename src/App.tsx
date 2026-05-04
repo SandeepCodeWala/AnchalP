@@ -178,7 +178,7 @@ export default function App() {
             selected={readingType}
             onSelect={selectReading}
           />
-          <Experience
+          {/* <Experience
             ref={experienceRef}
             reading={reading}
             stage={stage}
@@ -193,8 +193,8 @@ export default function App() {
               reset();
               scrollTo(experienceRef);
             }}
-          />
-          <Results
+          /> */}
+          {/* <Results
             ref={resultsRef}
             reading={reading}
             stage={stage}
@@ -203,7 +203,7 @@ export default function App() {
               reset();
               scrollTo(experienceRef);
             }}
-          />
+          /> */}
           <Contact />
         </motion.main>
       </AnimatePresence>
