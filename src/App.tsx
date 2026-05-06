@@ -8,6 +8,7 @@ import ChooseReading from "@/sections/ChooseReading";
 import Contact from "@/sections/Contact";
 import Experience from "@/sections/Experience";
 import Hero from "@/sections/Hero";
+import HowItWorks from "@/sections/HowItWorks";
 import Results from "@/sections/Results";
 import Testimonials from "@/sections/Testimonials";
 import {
@@ -22,40 +23,9 @@ import type { DrawnCard } from "@/data/tarot";
 import { useI18n } from "@/i18n/i18n";
 import { shuffle } from "@/utils/shuffle";
 
-function useCursorAurora(enabled: boolean) {
-  useEffect(() => {
-    if (!enabled) return;
-
-    const root = document.documentElement;
-    let raf = 0;
-    let lastX = 0;
-    let lastY = 0;
-
-    const update = () => {
-      root.style.setProperty("--mx", `${lastX}px`);
-      root.style.setProperty("--my", `${lastY}px`);
-      raf = 0;
-    };
-
-    const onMove = (e: PointerEvent) => {
-      lastX = e.clientX;
-      lastY = e.clientY;
-      if (raf) return;
-      raf = window.requestAnimationFrame(update);
-    };
-
-    window.addEventListener("pointermove", onMove, { passive: true });
-    return () => {
-      window.removeEventListener("pointermove", onMove);
-      if (raf) window.cancelAnimationFrame(raf);
-    };
-  }, [enabled]);
-}
-
 export default function App() {
   const { lang } = useI18n();
   const reduceMotion = useReducedMotion();
-  useCursorAurora(!reduceMotion);
 
   const [readingType, setReadingType] = useState<ReadingTypeId>("love");
   const [stage, setStage] = useState<ReadingStage>("idle");
@@ -109,7 +79,7 @@ export default function App() {
     setDrawnIds([]);
     setDeckIds(createDeckIds());
 
-    await new Promise((r) => setTimeout(r, reduceMotion ? 250 : 900));
+    await new Promise((r) => setTimeout(r, 250));
     if (shuffleToken.current !== token) return;
 
     setDeckIds(shuffle(createDeckIds()));
@@ -171,6 +141,7 @@ export default function App() {
         >
           <Hero onStart={() => scrollTo(readingsRef)} />
           <About />
+          <HowItWorks onStart={() => scrollTo(readingsRef)} />
           <Testimonials />
           <ChooseReading
             ref={readingsRef}
@@ -178,7 +149,7 @@ export default function App() {
             selected={readingType}
             onSelect={selectReading}
           />
-          {/* <Experience
+          <Experience
             ref={experienceRef}
             reading={reading}
             stage={stage}
@@ -193,8 +164,8 @@ export default function App() {
               reset();
               scrollTo(experienceRef);
             }}
-          /> */}
-          {/* <Results
+          />
+          <Results
             ref={resultsRef}
             reading={reading}
             stage={stage}
@@ -203,7 +174,7 @@ export default function App() {
               reset();
               scrollTo(experienceRef);
             }}
-          /> */}
+          />
           <Contact />
         </motion.main>
       </AnimatePresence>

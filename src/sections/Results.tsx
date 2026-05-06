@@ -70,7 +70,7 @@ const Results = forwardRef<HTMLElement, Props>(function Results(
               transition={{ duration: reduceMotion ? 0 : 0.55, ease: [0.22, 1, 0.36, 1] }}
               className="mx-auto max-w-5xl"
             >
-              <div className="glass relative overflow-hidden rounded-3xl p-6 ring-1 ring-black/10 dark:ring-white/10 sm:p-8">
+              <div className="glass relative overflow-hidden rounded-3xl p-6 bg-white/90 ring-1 ring-black/10 dark:bg-white/[0.03] dark:ring-white/10 sm:p-8">
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
                     <div className="text-xs uppercase tracking-[0.28em] text-zinc-600 dark:text-white/55">
@@ -134,7 +134,7 @@ const Results = forwardRef<HTMLElement, Props>(function Results(
                       duration: reduceMotion ? 0 : 0.45,
                       delay: reduceMotion ? 0 : idx * 0.05
                     }}
-                    className="glass rounded-3xl p-6 ring-1 ring-black/10 dark:ring-white/10"
+                    className="glass rounded-3xl p-6 bg-white/95 ring-1 ring-black/10 dark:bg-white/[0.03] dark:ring-white/10"
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div>

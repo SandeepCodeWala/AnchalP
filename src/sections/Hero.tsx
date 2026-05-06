@@ -60,16 +60,20 @@ export default function Hero({ onStart }: { onStart: () => void }) {
           </div>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <GlowButton onClick={onStart}>{t("heroCtaChoose")}</GlowButton>
             <GlowButton
-              variant="ghost"
               onClick={() =>
                 document
-                  .getElementById("experience")
+                  .getElementById("contact")
                   ?.scrollIntoView({ behavior: "smooth", block: "start" })
               }
             >
-              {t("heroCtaShuffle")}
+              {t("heroCtaContact")}
+            </GlowButton>
+            <GlowButton
+              variant="ghost"
+              onClick={() => window.open(profile.platformUrl, "_blank")}
+            >
+              {t("heroCtaAstro")}
             </GlowButton>
           </div>
         </div>

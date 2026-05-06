@@ -76,14 +76,15 @@ export default function TarotCard({
 
   const baseBack = useMemo(
     () => (
-      <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-violet-700/25 via-midnight to-violet-950 ring-1 ring-white/12">
+      <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-violet-950 to-slate-900 ring-1 ring-white/15 shadow-[0_18px_80px_rgba(15,23,42,0.18)]">
         <div className="absolute inset-[10px] rounded-xl border border-white/10" />
         <div className="absolute inset-[18px] rounded-lg border border-white/6" />
 
         <div className="absolute inset-0 opacity-80">
           <div className="absolute left-1/2 top-1/2 h-[210px] w-[210px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/20 blur-2xl" />
-          <div className="absolute left-1/2 top-1/2 h-[160px] w-[160px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/10 blur-2xl" />
+          <div className="absolute left-1/2 top-1/2 h-[160px] w-[160px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/15 blur-2xl" />
         </div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.08),transparent_38%)]" />
 
         <div className="absolute inset-0 grid place-items-center">
           <div className="grid place-items-center">
@@ -135,7 +136,7 @@ export default function TarotCard({
         className={cn(
           "relative h-full w-full rounded-2xl transition-shadow duration-300",
           interactive ? "group-hover:shadow-glow" : "",
-          "[transform-style:preserve-3d]"
+          "[transform-style:preserve-3d] [-webkit-transform-style:preserve-3d]"
         )}
         animate={{ rotateY: flipped ? 180 : 0 }}
         transition={{
@@ -143,12 +144,12 @@ export default function TarotCard({
           ease: [0.22, 1, 0.36, 1]
         }}
       >
-        <div className="absolute inset-0 [backface-visibility:hidden]">
+        <div className="absolute inset-0 [backface-visibility:hidden] [-webkit-backface-visibility:hidden]">
           {baseBack}
         </div>
 
-        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-b from-violet-700/18 via-midnight to-violet-950 ring-1 ring-gold/25">
+        <div className="absolute inset-0 [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <div className="relative h-full w-full overflow-hidden rounded-2xl bg-gradient-to-b from-slate-950 via-violet-950 to-midnight ring-1 ring-white/10">
             <div className="absolute inset-[10px] rounded-xl border border-white/10" />
             <div className="absolute inset-[18px] rounded-lg border border-white/6" />
 

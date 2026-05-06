@@ -26,7 +26,7 @@ function StageLabel({ stage }: { stage: ReadingStage }) {
 function PlaceholderCard({ label }: { label: string }) {
   const { t } = useI18n();
   return (
-    <div className="group relative h-[208px] w-[144px] shrink-0 snap-center rounded-2xl border border-black/10 bg-black/[0.02] ring-1 ring-black/6 dark:border-white/10 dark:bg-white/[0.02] dark:ring-white/6 sm:justify-self-center">
+    <div className="group relative h-[208px] w-[144px] shrink-0 snap-center rounded-2xl border border-zinc-200 bg-white/90 ring-1 ring-black/6 dark:border-white/10 dark:bg-white/[0.02] dark:ring-white/6 sm:justify-self-center">
       <div className="absolute inset-[10px] rounded-xl border border-dashed border-black/10 dark:border-white/10" />
       <div className="absolute inset-0 grid place-items-center text-center">
         <div>
@@ -85,7 +85,7 @@ export default function TarotExperience({
     <LayoutGroup>
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1fr,1.2fr] lg:gap-14">
-          <div className="glass relative overflow-hidden rounded-3xl p-6 ring-1 ring-black/10 dark:ring-white/10 sm:p-8">
+          <div className="glass relative overflow-hidden rounded-3xl p-6 bg-white/90 ring-1 ring-black/10 dark:bg-white/[0.03] dark:ring-white/10 sm:p-8">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="space-y-1">
                 <div className="text-sm text-zinc-600 dark:text-white/60">
@@ -217,7 +217,7 @@ export default function TarotExperience({
             </div>
           </div>
 
-          <div className="glass relative overflow-hidden rounded-3xl p-6 ring-1 ring-black/10 dark:ring-white/10 sm:p-8">
+          <div className="glass relative overflow-hidden rounded-3xl p-6 bg-white/85 ring-1 ring-black/10 dark:bg-white/[0.03] dark:ring-white/10 sm:p-8">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <div className="text-sm text-zinc-600 dark:text-white/60">

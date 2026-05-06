@@ -25,8 +25,8 @@ export const strings = {
     heroTitle: "Reveal what the night already knows",
     heroSubtitle:
       "A luxurious, emotionally-led Tarot experience: cinematic shuffles, touch-friendly selection, and elegant reveals — designed to feel like a high-end spiritual platform.",
-    heroCtaChoose: "Choose Your Reading",
-    heroCtaShuffle: "Shuffle & Draw",
+    heroCtaContact: "Contact",
+    heroCtaAstro: "Visit Astrosage",
     heroTapFlip: "Tap the card to flip",
 
     chooseKicker: "Choose Your Reading",
@@ -194,8 +194,8 @@ export const strings = {
     heroTitle: "रात जो जानती है, उसे उजागर करें",
     heroSubtitle:
       "एक शानदार, भावनात्मक टैरो अनुभव: सिनेमैटिक शफल, टच‑फ्रेंडली चयन, और एलिगेंट रिवील — ऐसा अनुभव जैसे एक प्रीमियम स्पिरिचुअल प्लेटफ़ॉर्म।",
-    heroCtaChoose: "अपनी रीडिंग चुनें",
-    heroCtaShuffle: "शफल और ड्रॉ",
+    heroCtaContact: "संपर्क करें",
+    heroCtaAstro: "Astrosage देखें",
     heroTapFlip: "कार्ड पलटने के लिए टैप करें",
 
     chooseKicker: "रीडिंग चुनें",
